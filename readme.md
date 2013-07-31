@@ -12,7 +12,7 @@ Features:
 * Multiple options
 
 
-Usage:
+##Usage:
 
 Include `slider.css` or `slider.min.css` and use the following html structure:
 
@@ -45,7 +45,7 @@ $('.full-width').fullWidth();
 The script automatically adds CSS classes like `slide-1`, `slide-2`, `slide-3` etc. which allows you to specifically target slides to add custom styles to.
 
  
-Options:
+##Options:
 
 ```javascript
 $(selector).fullWidth({
