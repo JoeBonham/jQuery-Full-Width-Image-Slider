@@ -14,7 +14,8 @@ Features:
 
 Usage:
 
-HTML structure, add as many `<div class="slide">…</div>` as you need.
+Include `slider.css` or `slider.min.css` and use the following html structure:
+
 ```html
 <div class="full-width">
 	<div class="inner">
@@ -35,7 +36,7 @@ HTML structure, add as many `<div class="slide">…</div>` as you need.
 </div>
 ```
 
-Then include `slider.js` or `slider.min.js` and call:
+Then include `slider.js` or `slider.min.js` and initialise it using:
 
 ```javascript
 $('.full-width').fullWidth();
