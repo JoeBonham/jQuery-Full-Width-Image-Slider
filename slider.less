@@ -12,11 +12,9 @@
 		width:400%;
 		overflow-y:hidden;
 	    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=00)";
-	     filter: alpha(opacity=00);
-	     -moz-opacity: 0;
-	     -khtml-opacity: 0;
-		 opactiy: 0;
-		
+	    filter: alpha(opacity=00);
+	    -moz-opacity: 0;
+		opactiy: 0;
 	}
 	.slide{
 		width:25%;
@@ -98,13 +96,8 @@
 }
 
 .lt-ie9{
-	.full-width .slide div p, .full-width .controls a{
+	.full-width p, .full-width .controls a{
 		background:url('bg-trans.png') repeat;
-	}
-}
-
-.lt-ie7{
-	.full-width .slide div p, .full-width .controls a{
-		background:#333;
+		_background: #333;
 	}
 }

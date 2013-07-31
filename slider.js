@@ -19,7 +19,7 @@
 			inner		=	full.find('.inner'),
 			slides		=	inner.find('.slide'),
 			images		=	slides.find('img'),
-			nav		=	full.find('.slide-nav'),
+			nav			=	full.find('.slide-nav'),
 			controls	=	full.find('.controls a'),
 			navCircles	=	'',
 			status		=	{current : 0, max : slides.length - 1},
@@ -33,7 +33,7 @@
 					status.current = status.current+1 > status.max ? 0 : status.current+1;
 				}else if(direction === 'left'){
 					status.current = status.current-1 < 0 ? status.max : status.current-1;
-				}else if(direction === 'direct'){
+				}else{
 					status.current = current || "0";
 				}
 			
@@ -63,8 +63,7 @@
 					var size = $(window).width()/41;
 					size = size > settings.maxFont ? settings.maxFont : size;
 					size = size < settings.minFont ? settings.minFont : size;
-					size = $(window).width() < 480 ? 20 : size;
-					return size;
+					return $(window).width() < 480 ? 20 : size;
 				}).css('top', function(){
 					var diff = inner.height()-$(this).height();
 					return $(window).width() <= 480 ? diff : diff/2;
@@ -78,9 +77,9 @@
 					timers.resize = setTimeout(function(){ resize(); }, 100);
 				}).trigger('resize');
 				
-				controls.on('click', function(e){
-					e.preventDefault();
+				controls.on('click', function(){
 					move(this.className);
+					return false;
 				});
 				
 				full.on('mouseenter mouseleave', function(e){
@@ -93,19 +92,21 @@
 				});
 				
 				$(document).on('keydown', function(e){
-					if(!(e.which === 37 || e.which === 39)) return;
-					var dir = e.which === 37 ? 'left' : 'right'; 
-					move(dir);
+					if(!(e.which === 37 || e.which === 39)) return; 
+					move(e.which === 37 ? 'left' : 'right');
 				});
 	
 			};
 		
 			(function(){
+				
+				inner.css('height', settings.minHeight);
+				
 				slides.each(function(i){
 					$(this).addClass('slide-'+(i+1));
 				});
 				
-				inner.css('width',  (slides.length*100)+'%');
+				inner.css('width', (slides.length*100)+'%');
 				
 				slides.css('width',  parseInt(100/slides.length, 10)+'%').each(function(){
 					nav.append('<span>&bull;</span>');

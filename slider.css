@@ -16,7 +16,6 @@
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=00)";
   filter: alpha(opacity=00);
   -moz-opacity: 0;
-  -khtml-opacity: 0;
   opactiy: 0;
 }
 .full-width .slide {
@@ -98,13 +97,8 @@
 .lt-ie8 .slide-nav {
   display: none;
 }
-.lt-ie9 .full-width .slide div p,
+.lt-ie9 .full-width p,
 .lt-ie9 .full-width .controls a {
   background: url('bg-trans.png') repeat;
+  _background: #333;
 }
-.lt-ie7 .full-width .slide div p,
-.lt-ie7 .full-width .controls a {
-  background: #333;
-}
-
-/* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */
