@@ -1,10 +1,10 @@
 # jQuery Full Width Image Slider
 
-A jQuery full width slider designed to be as compatible and lightweight as possible. Minified (JS & CSS) it weighs in at just 4KB.
+A jQuery full width slider designed to be as compatible and lightweight as possible. Minified (JS & CSS) it weighs in at just 3.6KB.
 
 Features:
 
-* Total minified size - 4KB
+* Total minified size - 3.6KB
 * Fully Responsive
 * Keeps image vertically centered
 * Supports captions
