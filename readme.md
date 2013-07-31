@@ -1,6 +1,6 @@
 # jQuery Full Width Slider
 
-A jQuery full width slider designed to be a compatible and lightweight as possible. Minified (JS & CSS) it weighs in a just 3KB.
+A jQuery full width slider designed to be a compatible and lightweight as possible. Minified (JS & CSS) it weighs in at just 3KB.
 
 Features:
 
@@ -17,7 +17,8 @@ Usage:
 
 HTML - 
 
-`<div class="full-width">
+```html
+<div class="full-width">
 	<div class="inner">
 		<div class="slide">
 			<div><p>Lorem ipsum dolor sit amet, consectetur. <br>Curabitur molestie elit et ultricies vehicula.</p></div>
@@ -41,7 +42,8 @@ HTML -
 		<a href="#" class="right">&gt;</a>
 	</div>
 	<div class="slide-nav"></div>
-</div>`
+</div>
+```
 
 
  
