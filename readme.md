@@ -42,6 +42,8 @@ Then include `slider.js` or `slider.min.js` and initialise it using:
 $('.full-width').fullWidth();
 ```
 
+The script automatically adds CSS classes like `slide-1`, `slide-2`, `slide-3` etc. which allows you to specifically target slides to add custom styles to.
+
  
 Options:
 
