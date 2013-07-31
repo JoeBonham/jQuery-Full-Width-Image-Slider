@@ -16,21 +16,15 @@ Features:
 	* Firefox 16 (OSX)
 	* iPad Safari (6.1)
 	* iPhone Safari (6.1)
-	* <strong>Important</strong>: if you want compatibility with IE8 and below add the following before your `</head>` tag:
-```html
-<!--[if lt IE 9]>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"></script>
-<![endif]-->
-```
-		* IE6 - works but with no navigation circles under slides & no transparency
-		* IE7 - works but with no navigation circles under slides 
-		* IE8-IE10 - works fine
+	* IE6 - works but with no navigation circles under slides & no transparency
+	* IE7 - works but with no navigation circles under slides 
+	* IE8-IE10 - works fine
 
+#Important
 
-##Usage:
+If you require compatibility with IE8 and below follow these instructions:
 
-This uses a slight variation of the conditional IE detection originally proposed by Paul Irish. There are only a few things which rely on this (see the CSS file) so you're welcome to ignore this if old versions of Internet Explorer (<= 8) aren't important:
-
+A variation of the IE detection method (originally proposed by Paul Irish) is used for some specific CSS styling:
 ```html
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -38,6 +32,18 @@ This uses a slight variation of the conditional IE detection originally proposed
 <!--[if IE 9 ]> <html lang="en" class="no-js ie9"> <![endif]-->
 <!--[if gt IE 9]><!--> <html class="no-js"> <!--<![endif]-->
 ```
+
+Media queries are also used, so add the following polyfill before your `</head>` tag:
+```html
+<!--[if lt IE 9]>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"></script>
+<![endif]-->
+```
+
+
+##Usage:
+
+
 
 Include `slider.css` or `slider.min.css` and use the following html structure:
 
