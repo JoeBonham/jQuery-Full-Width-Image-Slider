@@ -13,7 +13,6 @@
 							minFont		:	24
 						}, options);
 						
-						
 		return this.each( function() {
 		
 			var full	=	$(this),
