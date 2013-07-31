@@ -17,11 +17,11 @@ Features:
 	* iPad Safari (6.1)
 	* iPhone Safari (6.1)
 	* <strong>Important</strong>: if you want compatibility with IE8 and below add the following before your `</head>` tag:
-		```html
-		<!--[if lt IE 9]>
-			<script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"></script>
-		<![endif]-->
-		```
+```html
+<!--[if lt IE 9]>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"></script>
+<![endif]-->
+```
 		* IE6 - works but with no navigation circles under slides & no transparency
 		* IE7 - works but with no navigation circles under slides 
 		* IE8-IE10 - works fine
