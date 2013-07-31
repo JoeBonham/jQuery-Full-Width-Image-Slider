@@ -46,11 +46,11 @@ Options:
 
 ```javascript
 $(selector).fullWidth({
-			maxHeight	:	450, // maximum height of slider, px
-			minHeight	:	375, // minimum height of slider, px
-			delay		:	5000, // delay between slides, ms
-			transition	:	1000, // transition speed, ms
-			maxFont		:	36, // maximum font size, px
-			minFont		:	24 // minimum font size, px
-			});
+	maxHeight	:	450, // maximum height of slider, px
+	minHeight	:	375, // minimum height of slider, px
+	delay		:	5000, // delay between slides, ms
+	transition	:	1000, // transition speed, ms
+	maxFont		:	36, // maximum font size, px
+	minFont		:	24 // minimum font size, px
+});
 ```	
