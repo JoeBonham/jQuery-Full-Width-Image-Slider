@@ -23,9 +23,8 @@
 			controls	=	full.find('.controls a'),
 			navCircles	=	'',
 			status		=	{current : 0, max : slides.length - 1},
-			timers		=	{slides : '', resize : ''};
-						
-			var move = function(direction, current){
+			timers		=	{slides : '', resize : ''},
+			move = function(direction, current){
 				if(inner.is(':animated')) return;
 			
 				stop();
@@ -41,17 +40,14 @@
 				navCircles.removeClass('current').eq(status.current).addClass('current');
 				inner.animate({'margin-left' : '-'+100*status.current+'%'}, settings.transition ,function(){ start(); });
 			
-			};
-			
-			var start = function(){
+			},
+			start = function(){
 				timers.slides = setTimeout(function(){ move('right'); }, settings.delay);
-			};
-			
-			var stop = function(){
+			},
+			stop = function(){
 				clearTimeout(timers.slides);
-			};
-			
-			var resize = function(){
+			},
+			resize = function(){
 				
 				inner.css('height', function(){
 					var newHeight = parseInt($(window).width()/3, 10);
@@ -74,9 +70,8 @@
 					return $(window).width() <= 480 ? diff : diff/2;
 				});
 			
-			};
-		
-			var attachEvents = function(){
+			},
+			attachEvents = function(){
 			
 				$(window).resize(function(){
 					clearTimeout(timers.resize);
