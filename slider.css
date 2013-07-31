@@ -95,9 +95,16 @@
 .full-width .slide-nav span.current {
   color: #333;
 }
+.lt-ie8 .slide-nav {
+  display: none;
+}
 .lt-ie9 .full-width .slide div p,
 .lt-ie9 .full-width .controls a {
-  background: url('../bg-trans.png') repeat;
+  background: url('bg-trans.png') repeat;
+}
+.lt-ie7 .full-width .slide div p,
+.lt-ie7 .full-width .controls a {
+  background: #333;
 }
 
 /* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */
