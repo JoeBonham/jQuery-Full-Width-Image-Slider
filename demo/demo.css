@@ -104,11 +104,13 @@ a:hover {
  */
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
+  margin: 0.67em 0 0em 0;
+  text-algin:center;
 }
 h2 {
   font-size: 1.5em;
-  margin: 0.83em 0;
+  margin: 0em 0 1em 0;
+  text-algin:center;
 }
 h3 {
   font-size: 1.17em;
@@ -536,4 +538,5 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   color: #333;
 }
-.credit{text-align:center;}
+.credit, h2{text-align:center;}
+h1{font-size:46px;text-align:center;}
