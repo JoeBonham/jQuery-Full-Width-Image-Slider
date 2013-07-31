@@ -1,0 +1,103 @@
+.full-width {
+  overflow: hidden;
+  position: relative;
+  background-color: #fff;
+}
+.full-width,
+.full-width .slide img {
+  width: 100%;
+}
+.full-width:hover {
+  background-color: transparent;
+}
+.full-width .inner {
+  width: 400%;
+  overflow-y: hidden;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=00)";
+  filter: alpha(opacity=00);
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  opactiy: 0;
+}
+.full-width .slide {
+  width: 25%;
+  float: left;
+  overflow-x: hidden;
+  position: relative;
+}
+.full-width .slide img {
+  height: auto;
+}
+@media all and (max-width: 960px) {
+  .full-width .slide img {
+    height: 100%;
+    width: auto;
+    max-width: 9999px;
+  }
+}
+.full-width .slide div {
+  color: #fff;
+  position: absolute;
+  padding: 0 5%;
+  left: 0;
+  width: 90%;
+  text-align: right;
+  font-size: 32px;
+}
+.full-width .slide div p {
+  float: right;
+  text-align: left;
+  padding: 10px;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+.full-width .slide div.no-padding {
+  padding: 0;
+}
+@media all and (max-width: 480px) {
+  .full-width .slide div {
+    padding: 0;
+    width: 100%;
+  }
+  .full-width .slide div br {
+    display: none;
+  }
+}
+.full-width .controls a {
+  position: absolute;
+  top: 50%;
+  margin-top: -46px;
+  display: block;
+  background: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  color: #fff;
+  font-size: 40px;
+  padding: 0 10px 2px 7px;
+  ine-height: 40px;
+  display: none;
+}
+.full-width .controls a.left {
+  left: 0px;
+}
+.full-width .controls a.right {
+  right: 0px;
+}
+.full-width .slide-nav {
+  font-size: 75px;
+  margin: 0 auto;
+  line-height: 50px;
+  font-family: 'Helvetica', Arial, sans-serif;
+}
+.full-width .slide-nav span {
+  cursor: pointer;
+  color: #ccc;
+}
+.full-width .slide-nav span.current {
+  color: #333;
+}
+.lt-ie9 .full-width .slide div p,
+.lt-ie9 .full-width .controls a {
+  background: url('../bg-trans.png') repeat;
+}
+
+/* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */
