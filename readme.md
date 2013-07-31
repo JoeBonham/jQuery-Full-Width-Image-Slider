@@ -1,6 +1,6 @@
 # jQuery Full Width Slider
 
-A jQuery full width slider designed to be a compatible and lightweight as possible. Minified (JS & CSS) it weighs in at just 3KB.
+A jQuery full width slider designed to be as compatible and lightweight as possible. Minified (JS & CSS) it weighs in at just 3KB.
 
 Features:
 
@@ -9,8 +9,7 @@ Features:
 * Keeps image vertically centered
 * Supports captions
 * Resizes caption font for best viewing experience
-* Clean, valid code
-* Can define multiple options
+* Multiple options
 
 
 Usage:
@@ -22,6 +21,10 @@ HTML structure, add as many `<div class="slide">…</div>` as you need.
 		<div class="slide">
 			<div><p>Lorem ipsum dolor sit amet, consectetur. <br>Curabitur molestie elit et ultricies vehicula.</p></div>
 			<img src="http://lorempixel.com/1020/400/sports" width="1020" height="400">
+		</div>
+		<div class="slide">
+			<!-- Caption can be omitted without any change in functionality -->
+			<img src="http://lorempixel.com/1020/400/cats" width="1020" height="400">
 		</div>
 	</div>
 	<div class="controls">
@@ -39,4 +42,15 @@ $('.full-width').fullWidth();
 ```
 
  
+Options:
 
+```javascript
+$(selector).fullWidth({
+			maxHeight	:	450, // maximum height of slider, px
+			minHeight	:	375, // minimum height of slider, px
+			delay		:	5000, // delay between slides, ms
+			transition	:	1000, // transition speed, ms
+			maxFont		:	36, // maximum font size, px
+			minFont		:	24 // minimum font size, px
+			});
+```	
