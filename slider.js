@@ -4,14 +4,15 @@
 	
 	$.fn.fullWidth = function(options) {
 		
-		var settings = $.extend({
-				maxHeight	:	450,
-				minHeight	:	375,
-				delay		:	5000,
-				transition	:	1000,
-				maxFont		:	36,
-				minFont		:	24
-				}, options);
+		
+		var defaults = {
+			maxHeight	:	450,
+			minHeight	:	375,
+			delay		:	5000,
+			transition	:	1000,
+			maxFont		:	36,
+			minFont		:	24
+		}, settings = $.extend(defaults, options);
 						
 		return this.each( function() {
 		
