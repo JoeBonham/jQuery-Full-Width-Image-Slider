@@ -3,8 +3,7 @@
 	"use strict";
 	
 	$.fn.fullWidth = function(options) {
-		
-		
+			
 		var defaults = {
 			maxHeight	:	450,
 			minHeight	:	375,
@@ -20,7 +19,7 @@
 			inner		=	full.find('.inner'),
 			slides		=	inner.find('.slide'),
 			images		=	slides.find('img'),
-			nav			=	full.find('.slide-nav'),
+			nav		=	full.find('.slide-nav'),
 			controls	=	full.find('.controls a'),
 			navCircles	=	'',
 			status		=	{current : 0, max : slides.length - 1},
