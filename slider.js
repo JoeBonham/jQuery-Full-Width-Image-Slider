@@ -5,17 +5,17 @@
 	$.fn.fullWidth = function(options) {
 		
 		var settings = $.extend({
-					maxHeight	:	450,
-					minHeight	:	375,
-					delay		:	5000,
-					transition	:	1000,
-					maxFont		:	36,
-					minFont		:	24
-				}, options);
+							maxHeight	:	450,
+							minHeight	:	375,
+							delay		:	5000,
+							transition	:	1000,
+							maxFont		:	36,
+							minFont		:	24
+						}, options);
 						
 						
 		return this.each( function() {
-			
+		
 			var full	=	$(this),
 			inner		=	full.find('.inner'),
 			slides		=	inner.find('.slide'),
@@ -23,17 +23,10 @@
 			nav			=	full.find('.slide-nav'),
 			controls	=	full.find('.controls a'),
 			navCircles	=	'',
-			status		=	{
-							current : 0,
-							max : slides.length - 1
-						},
-			timers		=	{
-							slides : '',
-							resize : ''
-						};
+			status		=	{current : 0, max : slides.length - 1},
+			timers		=	{slides : '', resize : ''};
 						
 			var move = function(direction, current){
-			
 				if(inner.is(':animated')) return;
 			
 				stop();
