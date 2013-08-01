@@ -23,9 +23,8 @@ Features:
 
 #Important
 
-If you require compatibility with IE8 and below follow these instructions:
+If you require compatibility with IE8 and below then make sure the page this script is used on includes this IE detection method:
 
-A variation of the IE detection method (originally proposed by Paul Irish) is used for some specific CSS styling:
 ```html
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
