@@ -22,6 +22,7 @@
 			nav			=	full.find('.slide-nav'),
 			controls	=	full.find('.controls a'),
 			navCircles	=	'',
+			smallest	=	9999,
 			status		=	{current : 0, max : slides.length - 1},
 			timers		=	{slides : '', resize : ''},
 			move = function(direction, current){
@@ -48,27 +49,32 @@
 				clearTimeout(timers.slides);
 			},
 			resize = function(){
+				var wWidth = $(window).width();
 				
 				inner.css('height', function(){
-					var newHeight = parseInt($(window).width()/3, 10);
+					var newHeight = parseInt(wWidth/3, 10);
 					return newHeight > settings.maxHeight ? settings.maxHeight : newHeight < settings.minHeight ? settings.minHeight : newHeight;
 				});
 				
+				var imageCSS = wWidth <= smallest ? ['100%', 'auto', '9999'] : ['', '', ''];
 				images.css('margin-top', function(){
 					var start = inner.height(), curr = $(this).height();
-					return '-'+(start > curr ? start-curr : curr-start)/2+'px';
-				});
+					return '-'+(start > curr ? 0 : curr-start)/2+'px';
+				}).css({'height' : imageCSS[0], 'width' : imageCSS[1], 'maxWidth' : imageCSS[2]});
 				
-				slides.find('div').css('font-size', function(){
-					var size = $(window).width()/41;
-					size = size > settings.maxFont ? settings.maxFont : size;
-					size = size < settings.minFont ? settings.minFont : size;
-					return $(window).width() < 480 ? 20 : size;
-				}).css('top', function(){
-					var diff = inner.height()-$(this).height();
-					return $(window).width() <= 480 ? diff : diff/2;
-				});
-			
+				var divCSS = wWidth <= 480 ? ['0', '100%', 'none'] : ['', '', ''];
+				slides.find('div').css({
+					'font-size' : function(){
+						var size = wWidth/41;
+						size = size > settings.maxFont ? settings.maxFont : size;
+						size = size < settings.minFont ? settings.minFont : size;
+						return wWidth < 480 ? 20 : size;
+					}, 'top' : function(){
+						var diff = inner.height()-$(this).height();
+						return wWidth <= 480 ? diff : diff/2;
+					}, 'padding' : divCSS[0], 'width' : divCSS[1]
+				}).find('br').css('display', divCSS[2]);
+				
 			},
 			attachEvents = function(){
 			
@@ -101,6 +107,11 @@
 			(function(){
 				
 				inner.css('height', settings.minHeight);
+				
+				images.each(function(){
+					var w = $(this).attr('width');
+					smallest = w < smallest ? w : smallest;
+				});
 				
 				slides.each(function(i){
 					$(this).addClass('slide-'+(i+1));
