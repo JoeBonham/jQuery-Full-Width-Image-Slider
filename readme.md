@@ -6,7 +6,8 @@ Features:
 
 * Total minified size - 3.6KB (~1.5KB gzipped)
 * Fully Responsive
-* Keeps image vertically centered
+* Keeps images vertically centered
+* Supports keyboard navigation
 * Supports captions
 * Resizes caption font for best viewing experience
 * Multiple options
@@ -31,13 +32,6 @@ A variation of the IE detection method (originally proposed by Paul Irish) is us
 <!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
 <!--[if IE 9 ]> <html lang="en" class="no-js ie9"> <![endif]-->
 <!--[if gt IE 9]><!--> <html class="no-js"> <!--<![endif]-->
-```
-
-Media queries are also used, so add the following polyfill before your `</head>` tag:
-```html
-<!--[if lt IE 9]>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"></script>
-<![endif]-->
 ```
 
 
