@@ -10,7 +10,7 @@
 			delay		:	5000,
 			transition	:	1000,
 			maxFont		:	36,
-			minFont		:	24
+			minFont		:	20
 		}, settings = $.extend(defaults, options);
 						
 		return this.each( function() {
@@ -49,30 +49,37 @@
 				clearTimeout(timers.slides);
 			},
 			resize = function(){
-				var wWidth = $(window).width();
 				
+				var wWidth = $(window).width(),
+					newHeight = parseInt(wWidth/3, 10),
+					imageCSS = wWidth <= smallest ? ['100%', 'auto', '9999'] : ['', '', ''],
+					start = inner.height(),
+					divCSS = wWidth <= 480 ? ['0', '100%', 'none'] : ['', '', ''],
+					size = wWidth/41;
+					
+				size = size > settings.maxFont ? settings.maxFont : 
+							(size < settings.minFont ? settings.minFont : size);
+
 				inner.css('height', function(){
-					var newHeight = parseInt(wWidth/3, 10);
-					return newHeight > settings.maxHeight ? settings.maxHeight : newHeight < settings.minHeight ? settings.minHeight : newHeight;
+					return newHeight > settings.maxHeight ? settings.maxHeight : 
+							(newHeight < settings.minHeight ? settings.minHeight : newHeight);
 				});
-				
-				var imageCSS = wWidth <= smallest ? ['100%', 'auto', '9999'] : ['', '', ''];
-				images.css('margin-top', function(){
-					var start = inner.height(), curr = $(this).height();
-					return '-'+(start > curr ? 0 : curr-start)/2+'px';
-				}).css({'height' : imageCSS[0], 'width' : imageCSS[1], 'maxWidth' : imageCSS[2]});
-				
-				var divCSS = wWidth <= 480 ? ['0', '100%', 'none'] : ['', '', ''];
+
+				images.css({
+					'margin-top' : function(){
+						var curr = $(this).height();
+						return '-'+(start > curr ? 0 : curr-start)/2+'px';
+					},
+					'height' : imageCSS[0], 'width' : imageCSS[1], 'maxWidth' : imageCSS[2]
+				});
+
 				slides.find('div').css({
-					'font-size' : function(){
-						var size = wWidth/41;
-						size = size > settings.maxFont ? settings.maxFont : size;
-						size = size < settings.minFont ? settings.minFont : size;
-						return wWidth < 480 ? 20 : size;
-					}, 'top' : function(){
-						var diff = inner.height()-$(this).height();
+					'font-size' : size, 
+					'top' : function(){
+						var diff = start-$(this).height();
 						return wWidth <= 480 ? diff : diff/2;
-					}, 'padding' : divCSS[0], 'width' : divCSS[1]
+					},
+					'padding' : divCSS[0], 'width' : divCSS[1]
 				}).find('br').css('display', divCSS[2]);
 				
 			},
