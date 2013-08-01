@@ -19,7 +19,7 @@
 			inner		=	full.find('.inner'),
 			slides		=	inner.find('.slide'),
 			images		=	slides.find('img'),
-			nav			=	full.find('.slide-nav'),
+			nav		=	full.find('.slide-nav'),
 			controls	=	full.find('.controls a'),
 			navCircles	=	'',
 			smallest	=	9999,
