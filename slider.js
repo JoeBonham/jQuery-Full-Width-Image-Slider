@@ -19,7 +19,7 @@
 			inner		=	full.find('.inner'),
 			slides		=	inner.find('.slide'),
 			images		=	slides.find('img'),
-			nav			=	full.find('.slide-nav'),
+			nav		=	full.find('.slide-nav'),
 			controls	=	full.find('.controls a'),
 			navCircles	=	'',
 			smallest	=	9999,
@@ -50,12 +50,12 @@
 			},
 			resize = function(){
 				
-				var wWidth = $(window).width(),
-					newHeight = parseInt(wWidth/3, 10),
-					imageCSS = wWidth <= smallest ? ['100%', 'auto', '9999'] : ['', '', ''],
-					start = inner.height(),
-					divCSS = wWidth <= 480 ? ['0', '100%', 'none'] : ['', '', ''],
-					size = wWidth/41;
+				var wWidth		=	$(window).width(),
+					newHeight	=	parseInt(wWidth/3, 10),
+					imageCSS	=	wWidth <= smallest ? ['100%', 'auto', '9999'] : ['', '', ''],
+					start		=	inner.height(),
+					divCSS		=	wWidth <= 480 ? ['0', '100%', 'none'] : ['', '', ''],
+					size		=	wWidth/41;
 					
 				size = size > settings.maxFont ? settings.maxFont : 
 							(size < settings.minFont ? settings.minFont : size);
