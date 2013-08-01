@@ -1,33 +1,26 @@
 .full-width{
 	overflow:hidden;
 	position:relative;
-	background-color:#fff;
+	background:#fff;
 	&, & .slide img{
 		width:100%;
 	}
 	&:hover{
-		background-color:transparent;
+		background:transparent;
 	}
 	.inner{
-		width:400%;
 		overflow-y:hidden;
 	    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=00)";
 	    filter: alpha(opacity=00);
 	    -moz-opacity: 0;
-		opactiy: 0;
+		opacity: 0;
 	}
 	.slide{
-		width:25%;
 		float:left;
 		overflow-x:hidden;
 		position:relative;
 		img{
 			height: auto;
-			@media all and (max-width: 960px){
-				& {
-					height:100%; width:auto; max-width:9999px;
-				}
-			}
 		}
 		div{
 			color:#fff;
@@ -44,18 +37,6 @@
 				margin:0;
 				background:rgba(0, 0, 0, 0.8);
 			}
-			&.no-padding{
-				padding:0;
-			}
-			@media all and (max-width: 480px){
-				& {
-					padding:0;
-					width:100%;
-				}
-				& br{
-					display:none;
-				}
-			}
 		}
 	}
 	.controls a{
@@ -68,8 +49,8 @@
 		color:#fff;
 		font-size:40px;
 		padding:0 10px 2px 7px;
-		ine-height:40px;
-		display:none;
+		line-height:40px;
+		*display:none;
 		&.left{
 			left: 0px;
 		}
@@ -78,6 +59,7 @@
 		}
 	}
 	.slide-nav{
+		*display:none;
 		font-size:75px;
 		margin:0 auto;
 		line-height:50px;
@@ -91,13 +73,9 @@
 		}
 	}
 }
-.lt-ie8{
-	.slide-nav{display:none}
-}
-
 .lt-ie9{
 	.full-width p, .full-width .controls a{
-		background:url('bg-trans.png') repeat;
-		_background: #333;
+			background:url('bg-trans.png') repeat;
+			_background: #333;
 	}
 }
