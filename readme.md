@@ -23,7 +23,7 @@ Features:
 
 #Important
 
-If you require compatibility with IE8 and below then make sure the page you're using this IE detection method:
+If you require compatibility with IE8 and below then make sure you're using this IE detection method:
 
 ```html
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
