@@ -26,11 +26,11 @@ Features:
 If you require compatibility with IE8 and below then make sure you're using this IE detection method:
 
 ```html
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
-<!--[if IE 9 ]> <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if gt IE 9]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="lt-ie9"> <![endif]-->
+<!--[if IE 9 ]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if gt IE 9]><!--> <html> <!--<![endif]-->
 ```
 
 
