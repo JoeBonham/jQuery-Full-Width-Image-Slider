@@ -126,7 +126,7 @@
 				
 				inner.css('width', (slides.length*100)+'%');
 				
-				slides.css('width',  parseInt(100/slides.length, 10)+'%').each(function(){
+				slides.css('width',  parseFloat(100/slides.length, 10)+'%').each(function(){
 					nav.append('<span>&bull;</span>');
 				});
 				
