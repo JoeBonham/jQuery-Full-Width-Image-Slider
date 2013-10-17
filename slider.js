@@ -5,17 +5,18 @@
 	$.fn.fullWidth = function(options) {
 			
 		var defaults = {
-			maxHeight	:	450,
-			minHeight	:	375,
-			delay		:	5000,
+			maxHeight 	:	450,
+			minHeight 	:	375,
+			delay	 		:	5000,
 			transition	:	1000,
-			maxFont		:	36,
-			minFont		:	20
+			maxFont	 	:	36,
+			minFont	 	:	20
 		}, settings = $.extend(defaults, options);
 						
 		return this.each( function() {
 		
 			var full		=	$(this),
+<<<<<<< HEAD
 			inner			=	full.find('.inner'),
 			slides			=	inner.find('.slide'),
 			images			=	slides.find('img'),
@@ -25,6 +26,17 @@
 			smallest		=	9999,
 			status			=	{current : 0, max : slides.length - 1},
 			timers			=	{slides : '', resize : ''},
+=======
+			inner			 =	full.find('.inner'),
+			slides			=	inner.find('.slide'),
+			images			=	slides.find('img'),
+			nav	  	 	=	full.find('.slide-nav'),
+			controls		=	full.find('.controls a'),
+			navCircles	=	'',
+			smallest  	=	9999,
+			status	  	=	{current : 0, max : slides.length - 1},
+			timers	  	=	{slides : '', resize : ''},
+>>>>>>> d929909c588a43391686c0b642397417e97cdc37
 			move = function(direction, current){
 				if(inner.is(':animated')) return;
 			
@@ -50,12 +62,21 @@
 			},
 			resize = function(){
 				
+<<<<<<< HEAD
 				var wWidth		=	$(window).width(),
 				newHeight		=	parseInt(wWidth/3, 10),
 				imageCSS		=	wWidth <= smallest ? ['100%', 'auto', '9999'] : ['', '', ''],
 				start			=	inner.height(),
 				divCSS			=	wWidth <= 480 ? ['0', '100%', 'none'] : ['', '', ''],
 				size			=	wWidth/41;
+=======
+				var wWidth	=	$(window).width(),
+				newHeight 	=	parseInt(wWidth/3, 10),
+				imageCSS  	=	wWidth <= smallest ? ['100%', 'auto', '9999'] : ['', '', ''],
+				start 			=	inner.height(),
+				divCSS	  	=	wWidth <= 480 ? ['0', '100%', 'none'] : ['', '', ''],
+				size  			=	wWidth/41;
+>>>>>>> d929909c588a43391686c0b642397417e97cdc37
 					
 				size = size > settings.maxFont ? settings.maxFont : 
 							(size < settings.minFont ? settings.minFont : size);
