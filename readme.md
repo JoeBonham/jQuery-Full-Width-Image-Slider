@@ -44,7 +44,10 @@ Include `slider.css` or `slider.min.css` and use the following html structure:
 <div class="full-width">
 	<div class="inner">
 		<div class="slide">
-			<div>Lorem ipsum dolor sit amet, consectetur. <br>Curabitur molestie elit et ultricies vehicula.</div>
+			<div>
+				Lorem ipsum dolor sit amet, consectetur. <br>
+				Curabitur molestie elit et ultricies vehicula.
+			</div>
 			<img src="http://lorempixel.com/1020/400/sports" width="1020" height="400">
 		</div>
 		<div class="slide">
