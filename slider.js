@@ -57,10 +57,10 @@
 				divCSS		=	wWidth <= 480 ? ['0', '100%', 'none'] : ['', '', ''],
 				size		=	wWidth/41;
 				/*
-					size equals window width divided by 41 - 41 was chosen as it creates a nicely proportionate font size.
-					However, you can experiment with this if you want a generally larger or smaller size to be set.
-					For example: a width of 960px/41 = 23.4px, with 20 instead of 41 you'd get a font size of 48px.
-					It really depends on what kind of content you're displaying and how much text you've got on each slide.
+				size equals window width divided by 41 - 41 was chosen as it creates a nicely proportionate font size.
+				However, you can experiment with this if you want a generally larger or smaller size to be set.
+				For example: a width of 960px/41 = 23.4px, with 20 instead of 41 you'd get a font size of 48px.
+				It really depends on what kind of content you're displaying and how much text you've got on each slide.
 				*/	
 				
 				size = size > settings.maxFont ? settings.maxFont : 
