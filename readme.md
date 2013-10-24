@@ -4,7 +4,7 @@ A jQuery full width slider designed to be as compatible and lightweight as possi
 
 Features:
 
-* Total minified size - 3.3KB (~1.5KB gzipped)
+* Total minified size - 2.3KB minified (~1.5KB gzipped)
 * Fully Responsive
 * Keeps images vertically centered
 * Supports keyboard navigation
