@@ -136,8 +136,7 @@
                     nav.append('<span>&bull;</span>');
                 });
                 
-                slides.find('div:first').wrapInner('<p />');
-                // div:first just in case there's a div inside the caption div
+                slides.find('div').wrapInner('<p />');
                 
                 navCircles = nav.find('span');
                 navCircles.first().addClass('current');
