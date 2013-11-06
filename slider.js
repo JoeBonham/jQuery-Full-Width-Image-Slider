@@ -25,7 +25,6 @@
             smallest    =    9999,
             status      =    {current : 0, max : slides.length - 1},
             timers      =    {slides : '', resize : ''},
-            
             move = function(direction, current){
                 if(inner.is(':animated')) return;
             
@@ -36,7 +35,7 @@
                 }else if(direction === 'left'){
                     status.current = status.current-1 < 0 ? status.max : status.current-1;
                 }else{
-                    status.current = current || 0;
+                    status.current = current || "0";
                 }
             
                 navCircles.removeClass('current').eq(status.current).addClass('current');
