@@ -8,7 +8,7 @@ Features:
 * Fully Responsive
 * CSS3 Transitions with jQuery `.animate()` fallback 
 * Keeps images vertically centered
-* Three custom events - `fws.loaded`, `fws.move` and `fws.stop`
+* Two custom events - `fws.start`, `fws.finish`
 * Supports keyboard navigation
 * Supports captions
 * Resizes caption font for best viewing experience
@@ -73,15 +73,11 @@ $('.full-width').fullWidth();
 
 The script automatically adds a CSS class to each slide in this format: `slide-1`, `slide-2`, `slide-3` etc. These allow you to specifically target slides if you need to add custom styles.
 
-There are three custom events - one that's fired when the slider loads, another that's fired before a slide moves and one that's fired when the slide has stopped moving. These events are triggered on the slider wrapper, in the demo this is `.full-width`. Here's the example code from the demo page:
+There are two custom events - one that's fired before a slide moves and one that's fired when the slide has stopped moving. These events are triggered on the slider wrapper, in the demo this is `.full-width`. Here's the example code from the demo page:
 
 ```javascript
-$('.full-width').on('fws.loaded', function(e, data){
-    // Slider Loaded
-})
-.on('fws.move', function(e, data){
+$('.full-width').on('fws.start', function(e, data){
     /*
-    
     'data' is an object with the following structure:
     {
     	status: {
@@ -91,14 +87,11 @@ $('.full-width').on('fws.loaded', function(e, data){
     	},
     	direction: '' // left, right or direct
     }
-    
     */
 })
-.on('fws.stop', function(e, data){
+.on('fws.finish', function(e, data){
     /*
-    
     'data' has the same structure as the data object in `fws.move` but without the direction property
-    
     */
 });
 ```
