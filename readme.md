@@ -6,7 +6,7 @@ Features:
 
 * Total minified size - 4.09KB minified (~1.79KB gzipped)
 * Fully Responsive
-* CSS3 Transitions with jQuery `.animate()` fallback* 
+* CSS3 Transitions with jQuery `.animate()` fallback 
 * Keeps images vertically centered
 * Two custom events - `fws.loaded` and `fws.change`
 * Supports keyboard navigation
@@ -82,7 +82,7 @@ $('.full-width').on('fws.loaded', function(e, data){
 .on('fws.change', function(e, data){
     /*
     
-    data is an object with useful information:
+    'data' is an object the following structure:
     {
     	status: {
     		current: 0, // current slide number
