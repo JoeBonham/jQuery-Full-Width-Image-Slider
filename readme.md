@@ -82,7 +82,7 @@ $('.full-width').on('fws.loaded', function(e, data){
 .on('fws.move', function(e, data){
     /*
     
-    'data' is an object the following structure:
+    'data' is an object with the following structure:
     {
     	status: {
     		current: 0, // current slide number
@@ -97,7 +97,7 @@ $('.full-width').on('fws.loaded', function(e, data){
 .on('fws.stop', function(e, data){
     /*
     
-    'data' has the same strcutre as the data object in `fws.move` but without the direction property
+    'data' has the same structure as the data object in `fws.move` but without the direction property
     
     */
 });
