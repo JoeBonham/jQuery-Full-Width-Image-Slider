@@ -57,7 +57,7 @@
                 }
             
                 navCircles.removeClass('current').eq(status.current).addClass('current');
-                full.trigger( 'fws.change', { 'status' : status, 'direction' : direction } );
+                full.trigger( 'fws.move', { 'status' : status, 'direction' : direction } );
                 
                 if(cssTrans){
                     inner.css({ 'margin-left' : '-' + 100 * status.current + '%' });
@@ -68,6 +68,7 @@
             
             },
             start = function(){
+                full.trigger( 'fws.stop', { 'status' : status } );
                 timers.slides = setTimeout(function(){ move('right'); }, settings.delay);
             },
             stop = function(){
