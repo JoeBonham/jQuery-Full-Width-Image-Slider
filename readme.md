@@ -4,19 +4,21 @@ A jQuery full width slider designed to be as compatible and lightweight as possi
 
 Features:
 
-* Total minified size - 3.3KB minified (~1.5KB gzipped)
+* Total minified size - 4.09KB minified (~1.79KB gzipped)
 * Fully Responsive
+* CSS3 Transitions with jQuery `.animate()` fallback* 
 * Keeps images vertically centered
+* Two custom events - `fws.loaded` and `fws.change`
 * Supports keyboard navigation
 * Supports captions
 * Resizes caption font for best viewing experience
 * Multiple options
 * Tested with:
-	* Chrome 22 (OSX)
-	* Safari 6 (OSX)
-	* Firefox 16 (OSX)
-	* iPad Safari (6.1)
-	* iPhone Safari (6.1)
+	* Chrome 22-31 (OSX)
+	* Safari 6-7.0.3 (OSX)
+	* Firefox 16-27 (OSX)
+	* iPad Safari (6.1 & 7.1)
+	* iPhone Safari (6.1 & 7.1)
 	* IE6 - works but with no navigation circles under slides & no transparency
 	* IE7 - works but with no navigation circles under slides 
 	* IE8-IE10 - works fine
@@ -70,6 +72,29 @@ $('.full-width').fullWidth();
 ```
 
 The script automatically adds a CSS class to each slide in this format: `slide-1`, `slide-2`, `slide-3` etc. These allow you to specifically target slides if you need to add custom styles.
+
+There are two custom events - one that's fired when the slider loads and another that's fired before a slide change occurs. These events are triggered on the slider wrapper, in the demo this is `.full-width`. Here's the example code from the demo page:
+
+```javascript
+$('.full-width').on('fws.loaded', function(e, data){
+    // Slider Loaded
+})
+.on('fws.change', function(e, data){
+    /*
+    
+    data is an object with useful information:
+    {
+    	status: {
+    		current: 0, // current slide number
+    		previous: 0, // previous slide number
+    		max: 0 // slide count
+    	},
+    	direction: '' // left, right or direct
+    }
+    
+    */
+});
+```
 
  
 ##Options:
