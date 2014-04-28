@@ -60,8 +60,11 @@
                         .on('fws.loaded', function(e, data){
                             console.log('Slider Loaded')
                         })
-                        .on('fws.change', function(e, data){
+                        .on('fws.move', function(e, data){
                             console.log('Moving '+data.direction+' from slide '+data.status.previous+' to slide '+data.status.current);
+                        })
+                        .on('fws.stop', function(e, data){
+                            console.log('Moved from slide '+data.status.previous+' to slide '+data.status.current);
                         });
 	</script>
 </body>
