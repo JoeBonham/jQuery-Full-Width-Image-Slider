@@ -12,7 +12,22 @@
             maxFont     :    36,
             minFont     :    20
         }, settings = $.extend(defaults, options);
-                        
+        
+        var cssTrans  = (function() {
+            var elem = document.createElement('p').style,
+                prefix = ['Webkit','Moz','O','ms','Khtml'];
+        
+            if( elem['transition'] == '' ){
+                return true;
+            }
+            while( prefix.length ){
+                if( prefix.pop() + 'Transition' in elem ){
+                    return true;
+                }
+            }
+            return false;
+        }());
+        
         return this.each( function() {
         
             var full    =    $(this),
@@ -23,13 +38,15 @@
             controls    =    full.find('.controls a'),
             navCircles  =    '',
             smallest    =    9999,
-            status      =    {current : 0, max : slides.length - 1},
+            status      =    {current : 0, previous : 0, max : slides.length - 1},
             timers      =    {slides : '', resize : ''},
             
             move = function(direction, current){
                 if(inner.is(':animated')) return;
             
                 stop();
+            
+                status.previous = status.current;
             
                 if(direction === 'right'){
                     status.current = status.current+1 > status.max ? 0 : status.current+1;
@@ -40,7 +57,14 @@
                 }
             
                 navCircles.removeClass('current').eq(status.current).addClass('current');
-                inner.animate({'margin-left' : '-'+100*status.current+'%'}, settings.transition ,function(){ start(); });
+                full.trigger( 'fws.change', { 'status' : status, 'direction' : direction } );
+                
+                if(cssTrans){
+                    inner.css({ 'margin-left' : '-' + 100 * status.current + '%' });
+                    setTimeout(function(){ start(); }, settings.transition);
+                }else{
+                    inner.animate({ 'margin-left' : '-' + 100 * status.current + '%' }, settings.transition, function(){ start(); });
+                }
             
             },
             start = function(){
@@ -120,24 +144,22 @@
         
             (function(){
                 
-                inner.css('height', settings.minHeight);
-                
                 images.each(function(){
                     var w = $(this).attr('width');
                     smallest = w < smallest ? w : smallest;
                 });
                 
-                slides.each(function(i){
-                    $(this).addClass('slide-'+(i+1));
+                slides.css('width', parseFloat(100/slides.length, 10)+'%')
+                      .each(function(i){
+                          $(this).addClass('slide-'+(i+1));
+                          nav.append('<span>&bull;</span>');
+                      }).find('div').wrapInner('<p />');
+                
+                inner.css({
+                    height: settings.minHeight,
+                    transition: settings.transition+'ms',
+                    width: (slides.length*100)+'%'
                 });
-                
-                inner.css('width', (slides.length*100)+'%');
-                
-                slides.css('width',  parseFloat(100/slides.length, 10)+'%').each(function(){
-                    nav.append('<span>&bull;</span>');
-                });
-                
-                slides.find('div').wrapInner('<p />');
                 
                 navCircles = nav.find('span');
                 navCircles.first().addClass('current');
@@ -148,6 +170,7 @@
                 $(window).load(function() {
                     attachEvents();
                     inner.fadeTo(1000, 1, function(){
+                        full.trigger('fws.loaded')
                         start();
                     });
                 });
