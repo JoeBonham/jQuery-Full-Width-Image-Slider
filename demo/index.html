@@ -57,13 +57,10 @@
             console = { log: function(){} };
         }
 		$('.full-width').fullWidth()
-                        .on('fws.loaded', function(e, data){
-                            console.log('Slider Loaded')
-                        })
-                        .on('fws.move', function(e, data){
+                        .on('fws.start', function(e, data){
                             console.log('Moving '+data.direction+' from slide '+data.status.previous+' to slide '+data.status.current);
                         })
-                        .on('fws.stop', function(e, data){
+                        .on('fws.finish', function(e, data){
                             console.log('Moved from slide '+data.status.previous+' to slide '+data.status.current);
                         });
 	</script>
