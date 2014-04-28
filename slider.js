@@ -67,8 +67,8 @@
                 }
             
             },
-            start = function(){
-                full.trigger( 'fws.stop', { 'status' : status } );
+            start = function(first){
+                if(typeof first == 'undefined') full.trigger( 'fws.stop', { 'status' : status } );
                 timers.slides = setTimeout(function(){ move('right'); }, settings.delay);
             },
             stop = function(){
@@ -172,7 +172,7 @@
                     attachEvents();
                     inner.fadeTo(1000, 1, function(){
                         full.trigger('fws.loaded')
-                        start();
+                        start(true);
                     });
                 });
             }());
