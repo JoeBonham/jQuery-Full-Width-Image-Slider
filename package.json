@@ -1,0 +1,16 @@
+{
+  "name": "jquery-full-width-image-slider",
+  "version": "0.1.0",
+  "scripts": {
+    "test": "grunt test --verbose"
+  },
+  "author": "Joseph Bonahm",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-less": "~1.0.0",
+    "css-parse": "~2.0.0",
+    "grunt-jslint": "~1.1.11",
+    "grunt-contrib-uglify": "~0.7.0"
+  }
+}
