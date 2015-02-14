@@ -4,10 +4,10 @@ module.exports = function (grunt) {
     
 	grunt.initConfig({
 		less: {
-            development: {
-			    options: {
-                    compress: true
-			    },
+		    options: {
+                compress: true
+		    },
+            production: {
 			    files: {
 			        "slider.min.css" : "style.less"
 			    }
@@ -19,10 +19,19 @@ module.exports = function (grunt) {
                     drop_console: true
                 }
             },
-            development: {
+            production: {
                 files: {
                     'slider.min.js': 'slider.js'
                 }
+            }
+        },
+        jslint: {
+            development: {
+                src: [ 'slider.js' ],
+                directives: {
+                    jQuery: true
+                }
+                
             }
         },
 		watch : {
@@ -32,11 +41,13 @@ module.exports = function (grunt) {
 			},
 			js: {
 				files: '*.js',
-				tasks: 'uglify'
+				tasks: ['jslint', 'uglify']
 			}
 		}
 	});
+    grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-jslint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.registerTask('default', ['uglify', 'less']);
 };
