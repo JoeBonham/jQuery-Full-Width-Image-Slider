@@ -1,6 +1,8 @@
 module.exports = function (grunt) {
 
 	'use strict';
+	
+	require('jit-grunt')(grunt);
     
 	grunt.initConfig({
 		less: {
@@ -8,16 +10,14 @@ module.exports = function (grunt) {
                 compress: true
 		    },
             production: {
-			    files: {
-			        "slider.min.css" : "style.less"
+			    files: { 
+			        "slider.min.css" : "slider.less"
 			    }
             },
 		},
         uglify: {
-            compress: {
-                options: {
-                    drop_console: true
-                }
+            options: {
+                drop_console: true
             },
             production: {
                 files: {
@@ -25,29 +25,45 @@ module.exports = function (grunt) {
                 }
             }
         },
-        jslint: {
-            development: {
-                src: [ 'slider.js' ],
-                directives: {
-                    jQuery: true
-                }
-                
-            }
+        jshint: { 
+            options: {
+                bitwise:   true,
+                camelcase: true,
+                eqeqeq:    true,
+                freeze:    true,
+                immed:     true,
+                indent:    2,
+                latedef:   true,
+                newcap:    true,
+                noempty:   true,
+                nonew:     true,
+                nonbsp:    true,
+                notypeof:  true,
+                plusplus:  false,
+                quotmark:  true,
+                regexp:    true,
+                strict:    true,
+                trailing:  true,
+                undef:     true,
+                unused:    true,
+                // environments
+                browser:   true,
+                globals:   { jQuery: true },
+                devel:     true  // dev only
+            },
+            all: [ 'slider.js' ]
         },
 		watch : {
 			css: {
-				files: '*.less',
+				files: 'slider.less',
 				tasks: 'less'
 			},
 			js: {
-				files: '*.js',
-				tasks: ['jslint', 'uglify']
+				files: 'slider.js',
+				tasks: ['jshint', 'uglify']
 			}
 		}
 	});
-    grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-jslint');
-	grunt.loadNpmTasks('grunt-contrib-watch');
+	
 	grunt.registerTask('default', ['uglify', 'less']);
 };
