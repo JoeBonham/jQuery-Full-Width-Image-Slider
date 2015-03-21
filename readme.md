@@ -8,20 +8,20 @@ Features:
 * Fully Responsive
 * CSS3 Transitions with jQuery `.animate()` fallback 
 * Keeps images vertically centered
-* Two custom events - `fws.start`, `fws.finish`
+* Two custom events - `fws.start`, `fws.finish` 
 * Supports keyboard navigation
 * Supports captions
 * Resizes caption font for best viewing experience
 * Multiple options
 * Tested with:
-	* Chrome 22-31 (OSX)
-	* Safari 6-7.0.3 (OSX)
-	* Firefox 16-27 (OSX)
-	* iPad Safari (6.1 & 7.1)
-	* iPhone Safari (6.1 & 7.1)
-	* IE6 - works but with no navigation circles under slides & no transparency
-	* IE7 - works but with no navigation circles under slides 
-	* IE8-IE10 - works fine
+	* Chrome 22-41 (OSX)
+	* Safari 6-8.0.2 (OSX)
+	* Firefox 16-36.0.3 (OSX)
+	* iPad Safari (6.1-8.1)
+	* iPhone Safari (6.1-8.1)
+	* IE6 - works but no transparency
+	* IE7 - works
+	* IE8-IE10 - works well
 
 #Important
 
