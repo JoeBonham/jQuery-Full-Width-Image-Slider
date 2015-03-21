@@ -1,6 +1,6 @@
 {
   "name": "jquery-full-width-image-slider",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "Joseph Bonahm",
   "devDependencies": {
     "grunt": "~0.4.5",
