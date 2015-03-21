@@ -17,7 +17,7 @@
 	<link rel="stylesheet" href="../slider.min.css?=3">
 </head>
 <body>
-	
+    
 	<div class="wrapper">
 		<h1>jQuery Full Width Slider</h1>
 		<h2>Lightweight, responsive, full width image Slider</h2>
@@ -41,28 +41,28 @@
 				</div>
 			</div>
 			<div class="controls">
-				<a href="#" class="left">&lt;</a>
-				<a href="#" class="right">&gt;</a>
+				<a href="#" class="left">&larr;</a>
+				<a href="#" class="right">&rarr;</a>
 			</div>
 			<div class="slide-nav"></div>
 		</div>
 		<p class="credit">Created By <a href="https://github.com/JoeBonham">Joe Bonham</a></p>.
 	</div>
 	
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="../slider.js"></script>
 	<script>
         // Just to fix IE issues when console isn't defined, only used for the demo - not required for the slider
-        if (typeof console === "undefined" || typeof console.log === "undefined") {
-            console = { log: function(){} };
-        }
-		$('.full-width').fullWidth()
-                        .on('fws.start', function(e, data){
-                            console.log('Moving '+data.direction+' from slide '+data.status.previous+' to slide '+data.status.current);
-                        })
-                        .on('fws.finish', function(e, data){
-                            console.log('Moved from slide '+data.status.previous+' to slide '+data.status.current);
-                        });
+        window.console = window.console || {
+            log: function () {}
+        };
+        $('.full-width').fullWidth()
+            .on('fws.start', function(e, data){
+                console.log( 'Moving '+ data.direction +' from slide '+ data.status.previous +' to slide '+ data.status.current );
+            })
+            .on('fws.finish', function(e, data){
+                console.log( 'Moved from slide ' + data.status.previous + ' to slide ' + data.status.current );
+            });
 	</script>
 </body>
 </html>
