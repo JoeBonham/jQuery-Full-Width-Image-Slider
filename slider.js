@@ -43,9 +43,9 @@
                 status.previous = status.current;
             
                 if(direction === 'right'){
-                    status.current = status.current+1 > status.max ? 0 : status.current+1;
+                    status.current = status.current + 1 > status.max ? 0 : status.current+1;
                 }else if(direction === 'left'){
-                    status.current = status.current-1 < 0 ? status.max : status.current-1;
+                    status.current = status.current - 1 < 0 ? status.max : status.current-1;
                 }else{
                     status.current = current || 0;
                 }
@@ -55,9 +55,9 @@
 				
                 if(cssTrans){
                     $inner.css({ 'margin-left' : '-' + 100 * status.current + '%' });
-                    setTimeout(function(){ start(); }, settings.transition);
+                    setTimeout(start, settings.transition);
                 }else{
-                    $inner.animate({ 'margin-left' : '-' + 100 * status.current + '%' }, settings.transition, function(){ start(); });
+                    $inner.animate({ 'margin-left' : '-' + 100 * status.current + '%' }, settings.transition, start );
                 }
              
             },
@@ -94,18 +94,21 @@
                 $images.css({
                     'margin-top' : function(){
                         var curr = $(this).height();
-                        return '-'+(start > curr ? 0 : curr-start)/2+'px';
+                        return '-' + (start > curr ? 0 : curr-start) / 2 + 'px';
                     },
-                    'height' : imageCSS[0], 'width' : imageCSS[1], 'maxWidth' : imageCSS[2]
+                    'height'	: imageCSS[0],
+					'width' 	: imageCSS[1],
+					'maxWidth'  : imageCSS[2]
                 });
 
                 $slides.find('div').css({
                     'font-size' : size, 
                     'top' : function(){
-                        var diff = start-$(this).height();
+                        var diff = start - $(this).height();
                         return $wWidth <= 480 ? diff : diff/2;
                     },
-                    'padding' : divCSS[0], 'width' : divCSS[1]
+                    'padding' 	: divCSS[0],
+					'width'		: divCSS[1]
                 }).find('br').css('display', divCSS[2]);
                 
             },
@@ -113,7 +116,7 @@
             
                 $(window).resize(function(){
                     clearTimeout(timers.resize);
-                    timers.resize = setTimeout(function(){ resize(); }, 100);
+                    timers.resize = setTimeout(resize, 100);
                 }).trigger('resize');
                 
                 $controls.on('click', function(){
@@ -122,6 +125,7 @@
                 });
                 
                 $full.on('mouseenter mouseleave', function(e){
+					
                     if( $controls.is(':animated') ) return;
                     
 					if( e.type === 'mouseenter' ){
@@ -170,9 +174,7 @@
                 $(window).load(function() {
                     attachEvents();
                     $full.trigger( 'fws.start', { 'status' : status, 'direction' : 'direct' } );
-                    $inner.fadeTo(1000, 1, function(){
-                        start();
-                    });
+                    $inner.fadeTo(1000, 1, start);
                 });
             }());
         

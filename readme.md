@@ -14,14 +14,13 @@ Features:
 * Resizes caption font for best viewing experience
 * Multiple options
 * Tested with:
-	* Chrome 22-41 (OSX)
-	* Safari 6-8.0.2 (OSX)
-	* Firefox 16-36.0.3 (OSX)
-	* iPad Safari (6.1-8.1)
-	* iPhone Safari (6.1-8.1)
+	* Chrome 22-44 (OSX)
+	* Safari 6-8.0.3 (OSX)
+	* Firefox 16-40 (OSX)
+	* iPad Safari (6.1-8.3)
+	* iPhone Safari (6.1-8.3)
 	* IE6 - works but no transparency
-	* IE7 - works
-	* IE8-IE10 - works well
+	* IE7-IE10 - works well
 
 #Important
 
